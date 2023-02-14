@@ -36,11 +36,12 @@ function preload ()
     }
     this.load.image("soil","assets/soil.png");
     this.load.image("soil_2","assets/soil_2.png");
+    this.load.image("soil_3","assets/mushroom_soil.png");
 }
 
 function create ()
 {
-    this.add.image(400, 300, 'soil');
+    this.add.image(400, 200, 'soil_3');
 }
 
 function update ()

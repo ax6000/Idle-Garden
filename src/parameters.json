@@ -1,0 +1,277 @@
+{
+  "plants": [
+    {
+      "name": "1",
+      "node": {
+        "name": "1_node",
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "endy": 0,
+          "endx": 0
+        },
+        "size": {
+          "height": 2,
+          "width": 2
+        },
+        "isleft": true
+      },
+      "leaves": [
+        {
+          "name": "1_le_l_1",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 10,
+            "width": 4
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_le_l_3",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 12,
+            "width": 4
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_le_l_4",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 12,
+            "width": 5
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_le_l_5",
+          "offset": {
+            "x": -2,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 12,
+            "width": 4
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_le_r_1",
+          "offset": {
+            "x": 2,
+            "y": -2,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 13,
+            "width": 3
+          },
+          "isleft": false
+        },
+        {
+          "name": "1_le_r_2",
+          "offset": {
+            "y": 0,
+            "x": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 14,
+            "width": 4
+          },
+          "isleft": false
+        },
+        {
+          "name": "1_le_r_3",
+          "offset": {
+            "y": 0,
+            "x": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 11,
+            "width": 3
+          },
+          "isleft": false
+        },
+        {
+          "name": "1_le_r_4",
+          "offset": {
+            "y": 0,
+            "x": 1,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 10,
+            "width": 4
+          },
+          "isleft": false
+        }
+      ],
+      "stems": [
+        {
+          "name": "1_l_1",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 5,
+            "width": 9
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_l_2",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 5,
+            "width": 3
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_l_3",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 13,
+            "width": 3
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_l_4",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 7,
+            "width": 2
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_l_5",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 7,
+            "width": 1
+          },
+          "isleft": true
+        },
+        {
+          "name": "1_r_1",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 7,
+            "width": 3
+          },
+          "isleft": false
+        },
+        {
+          "name": "1_r_2",
+          "offset": {
+            "x": 0,
+            "y": -4,
+            "endy": 0,
+            "endx": 0
+          },
+          "size": {
+            "height": 25,
+            "width": 8
+          },
+          "isleft": false
+        },
+        {
+          "name": "1_r_3",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "endy": 0,
+            "endx": 1
+          },
+          "size": {
+            "height": 11,
+            "width": 4
+          },
+          "isleft": false
+        },
+        {
+          "name": "1_le_l_2",
+          "offset": {
+            "x": -3,
+            "y": 0,
+            "endy": -12,
+            "endx": -4
+          },
+          "size": {
+            "height": 13,
+            "width": 5
+          },
+          "isleft": true
+        }
+      ],
+      "New item": {
+        "name": "1_le_r_1",
+        "offset": {
+          "x": 2,
+          "y": -2,
+          "endy": 0,
+          "endx": 0
+        },
+        "size": {
+          "height": 13,
+          "width": 3
+        },
+        "isleft": false
+      }
+    }
+  ]
+}
