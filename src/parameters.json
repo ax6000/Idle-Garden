@@ -257,21 +257,7 @@
           },
           "isleft": true
         }
-      ],
-      "New item": {
-        "name": "1_le_r_1",
-        "offset": {
-          "x": 2,
-          "y": -2,
-          "endy": 0,
-          "endx": 0
-        },
-        "size": {
-          "height": 13,
-          "width": 3
-        },
-        "isleft": false
-      }
+      ]
     }
   ]
 }
