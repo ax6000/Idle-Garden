@@ -14,10 +14,20 @@ class Plant{
     #scene;
     /** type of plant images locted in assets/{#species}" */
     #species;
+    /** */
     #jsonData;
-    #nLeaves;
+    #nLeftLeaves;
+    #nRightLeaves;
+    #nLeftStems;
+    #nRightStems
+    /** number of components(node,stem) which can connect more components*/
+    #nGrowable;
 
-    #nStems;
+    set root(node){this.#root = node;}
+    get scene(){ return this.#scene;}
+    get species(){return this.#species}
+    get jsonData(){return this.#jsonData}
+    
     /**
      * constructor
      * @param {Phaser.Math.Vector2} position 
@@ -32,23 +42,83 @@ class Plant{
         this.#scene = scene;
         this.#species = species
         // parameter -> index.js:45
-        this.#jsonData = this.#scene.cache.json.get("param")        
-
-        this.#nLeaves = Object.keys(this.#jsonData.plants[this.#species].leaves).length
-        this.#nStems= Object.keys(this.#jsonData.plants[this.#species].stems).length
+        this.#jsonData = this.#scene.cache.json.get("param").plants[this.#species] 
+        this.#nLeftLeaves = this.#nRightLeaves = this.#nLeftStems = this.#nRightStems = 0    
+        for (var item in this.#jsonData.leaves){
+            if (this.#jsonData.leaves[item].isLeft){
+                this.#nLeftLeaves +=1
+            }else{
+                this.#nRightLeaves+=1
+            }
+        }
+        for (var item in this.#jsonData.stems){
+            if (this.#jsonData.stems[item].isLeft){
+                this.#nLeftStems +=1
+            }else{
+                this.#nRightStems+=1
+            }
+        }
+        // this.#nLeaves = Object.keys(this.#jsonData.leaves).length
+        // this.#nStems= Object.keys(this.#jsonData.stems).length
+        
     }
     /**
      * create new Node object
      */
     createRoot(){
         console.log(this.#position);
-        this.#root = new Node(this.#position,this,this.#species+"_node") 
+        this.#root = new Node(this.#position,this,this.#species+"_node")
     }
-    set root(node){this.#root = node;}
-    get scene(){ return this.#scene;}
-    get species(){return this.#species}
-    get jsonData(){return this.#jsonData}
-    
+
+    dfs(node){
+        if (this.growFlg) return;
+        if (node.socketOffsets.length != 0 && Phaser.Math.FloatBetween(0,1) < 0.5){
+            createComponent(node)
+        }
+        for (var edge in node.edges){
+            if (edge.nodeTo == null){
+                if (Phaser.Math.FloatBetween(0,1) > 0.5) continue;
+                this.createComponent(edge)
+                this.growFlg = true
+                return   
+            }
+            this.dfs(edge.nodeTo)
+        }
+    }
+    grow(){
+        
+        var random = Phaser.Math.FloatBetween(0,1);
+        this.growFlg = false
+        dfs(this.#root)
+    }
+    createComponent(parent){
+        if (parent.constructor.name == "Node"){
+            var random = Phaser.Math.Between(0,parent.socketOffsets.length)
+            var n= 0;
+            if(parent.socketOffsets[random].direction != "left"){
+                n+= this.#nRightLeaves+this.#nRightStems
+            }
+            if(parent.socketOffsets[random].direction != "right"){
+                n+= this.#nLeftLeaves+this.#nLeftStems  
+            }
+            
+            
+        }
+        var n = parent.socketOffsets.length
+        var type = Phaser.Math.Between(0,3)
+        var component;
+        if (type == PlantComponentType.Node){
+            component = new Node(parent.position/**+ offset */,parent,this.species+"_node",)
+        }else if (type == PlantComponentType.Stem){
+            /**parent */
+            component = new Stem(parent.position/**+ offset */,parent,this.jsonData.stems[componentIdx-1].name,componentIdx-1)
+        }else{
+            component = new Leaf(parent.position/**+ offset */,parent,this.jsonData.leaves[componentIdx-this.#nStems-1].name,componentIdx-this.#nStems-1)
+        }
+        node.socketOffsets[Phaser.Math.Between(0,n)][Phaser.Math.Between(0,2)]
+
+    }
+
     
 
 }
@@ -83,7 +153,13 @@ function makePlantElementInfo(){
     /** 画像内の要素部分の幅（画像自体は一律32x64） */
     width : null,
     /** 画像内の要素部分の高さ（画像自体は一律32x64） */
-    height: null
+    height: null,
+        /**
+     * Nodeに隣接していて、葉や茎が接続可能なピクセルの座標
+     * pos + offset = (該当ピクセルの座標)
+     * @type {Array<Phaser.Math.Vector2>}
+     */
+    socketOffsets : []
     }
 }
 /** 
@@ -96,28 +172,13 @@ var PlantComponentType = {
     Stem:2,
     Leaf:3
 };
-/**
- * Node のときのみ使う PlantNodeInfo
- */
-function makePlantNodeInfo (){
-    var dict =  makePlantElementInfo()
-    /**
-     * Nodeに隣接していて、葉や茎が接続可能なピクセルの座標
-     * pos + offset = (該当ピクセルの座標)
-     * @type {Array<Phaser.Math.Vector2>}
-     */
-    dict.socketOffsets = [];
-    return dict;
-}
-
-
 
 class PlantElement{
 #position;
 #img;
 #parent;
 #plantInfo;
-
+get plantInfo(){return this.#plantInfo}
 /**
  * 初期化と画像の表示
  * @param {Phaser.Math.Vector2} position 
@@ -183,15 +244,13 @@ loadPlantElementInfo(type,n = 0){
     // console.log(jsonData.plants);
     // Nodeだけ継承クラスを使用
     var info, data
+    info = info = makePlantNodeInfo();
     if (type == PlantComponentType.Node){
-        info = makePlantNodeInfo();
-        data = jsonData.plants[species].node
+        data = jsonData.node
     }else if(type==PlantComponentType.Stem){
-        info = makePlantElementInfo();
-        data = jsonData.plants[species].stems[n]
+        data = jsonData.stems[n]
     }else if(type == PlantComponentType.Leaf){
-        info = makePlantElementInfo();
-        data = jsonData.plants[species].leaves[n]
+        data = jsonData.leaves[n]
     }
     info.offsetX = data.offset.x
     info.offsetY = data.offset.y
@@ -200,16 +259,14 @@ loadPlantElementInfo(type,n = 0){
     info.height = data.size.height
     info.width =  data.size.width
     info.isLeft =  data.isLeft
-    if (type == PlantComponentType.Node){
-        for(var item in data.socketOffsets){
-            info.socketOffsets.push(new Phaser.Math.Vector2(data.socketOffsets[item].x,data.socketOffsets[item].y))
-            // console.log( Phaser.Math.Vector2(data.socketOffsets[item].x,data.socketOffsets[item].y));
-        }
-        // console.log(info.socketOffsets);
+    for(var item in data.socketOffsets){
+        info.socketOffsets.push(new Phaser.Math.Vector2(data.socketOffsets[item].x,data.socketOffsets[item].y))
+        // console.log( Phaser.Math.Vector2(data.socketOffsets[item].x,data.socketOffsets[item].y));
     }
+        // console.log(info.socketOffsets);
     return info
 }
-get plantInfo(){return this.#plantInfo}
+
 }
 
 class Node extends PlantElement{
@@ -218,6 +275,7 @@ class Node extends PlantElement{
     #parent;
     #edges = [];
     #socketOffsets = [];
+    #growableSides = [];
     constructor(position,parent,img){
             super(position,parent,img);
             this.#socketOffsets = super.plantInfo.socketOffsets; 
@@ -225,6 +283,7 @@ class Node extends PlantElement{
     addEdge(edge){
         this.#edges.add(edge);
     }    
+    get edges(){return this.#edges}
 }
 
 class Stem extends PlantElement{

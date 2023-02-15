@@ -6,154 +6,169 @@
         "name": "0_node",
         "offset": {
           "x": 0,
-          "y": 0,
-          "endy": 0,
-          "endx": 0
+          "y": 0
         },
         "size": {
           "height": 2,
           "width": 2
         },
         "isLeft": true,
-        "socketOffsets" :[{
-          "x" : -1,
-          "y" : 0
-        },
-        {
-          "x" : -1,
-          "y" : -1
-        },
-        {
-          "x" : 0,
-          "y" : 1
-        },
-        {
-          "x" : 1,
-          "y" : 1
-        },
-        {
-          "x" : 2,
-          "y" : 0
-        },
-        {
-          "x" : 2,
-          "y" : -1
-        }
-        
-      ]
+        "socketOffsets": [
+          {
+            "0": {
+              "x": -1,
+              "y": 0
+            },
+            "1": {
+              "x": -1,
+              "y": -1
+            },
+            "direction": "left"
+          },
+          {
+            "0": {
+              "x": 0,
+              "y": 1
+            },
+            "1": {
+              "x": 1,
+              "y": 1
+            },
+            "direction": "mid"
+          },
+          {
+            "0": {
+              "x": 2,
+              "y": 0
+            },
+            "1:": {
+              "x": 2,
+              "y": -1
+            },
+            "direction": "right"
+          }
+        ]
       },
       "leaves": [
         {
           "name": "0_le_l_1",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 10,
             "width": 4
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_l_3",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 12,
             "width": 4
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_l_4",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 12,
             "width": 5
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_l_5",
           "offset": {
             "x": -2,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 12,
             "width": 4
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_r_1",
           "offset": {
             "x": 2,
-            "y": -2,
-            "endy": 0,
-            "endx": 0
+            "y": -2
           },
           "size": {
             "height": 13,
             "width": 3
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_r_2",
           "offset": {
             "y": 0,
-            "x": 0,
-            "endy": 0,
-            "endx": 0
+            "x": 0
           },
           "size": {
             "height": 14,
             "width": 4
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_r_3",
           "offset": {
             "y": 0,
-            "x": 0,
-            "endy": 0,
-            "endx": 0
+            "x": 0
           },
           "size": {
             "height": 11,
             "width": 3
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+
+          ]
         },
         {
           "name": "0_le_r_4",
           "offset": {
             "y": 0,
-            "x": 1,
-            "endy": 0,
-            "endx": 0
+            "x": 1
           },
           "size": {
             "height": 10,
             "width": 4
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+
+          ]
         }
       ],
       "stems": [
@@ -161,127 +176,190 @@
           "name": "0_l_1",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 5,
             "width": 9
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 9,
+                "y": 5
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_l_2",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 5,
             "width": 3
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 3,
+                "y": 5
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_l_3",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 13,
             "width": 3
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 3,
+                "y": 13
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_l_4",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 7,
             "width": 2
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 2,
+                "y": 7
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_l_5",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 7,
             "width": 1
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 1,
+                "y": 7
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_r_1",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 0
+            "y": 0
           },
           "size": {
             "height": 7,
             "width": 3
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 3,
+                "y": 7
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_r_2",
           "offset": {
             "x": 0,
-            "y": -4,
-            "endy": 0,
-            "endx": 0
+            "y": -4
           },
           "size": {
             "height": 25,
             "width": 8
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 8,
+                "y": 25
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_r_3",
           "offset": {
             "x": 0,
-            "y": 0,
-            "endy": 0,
-            "endx": 1
+            "y": 0
           },
           "size": {
             "height": 11,
             "width": 4
           },
-          "isLeft": false
+          "isLeft": false,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 5,
+                "y": 11
+              },
+              "directon": "mid"
+            }
+          ]
         },
         {
           "name": "0_le_l_2",
           "offset": {
             "x": -3,
-            "y": 0,
-            "endy": -12,
-            "endx": -4
+            "y": 0
           },
           "size": {
             "height": 13,
             "width": 5
           },
-          "isLeft": true
+          "isLeft": true,
+          "socketOffsets": [
+            {
+              "0": {
+                "x": 1,
+                "y": 1
+              },
+              "directon": "mid"
+            }
+          ]
         }
       ]
     }

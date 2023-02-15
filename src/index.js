@@ -23,6 +23,7 @@ function preload ()
         loaderPlugin.on('filecomplete', resolve).on('loaderror', reject);
         loaderPlugin.start();
     });
+
     /** 
      * load json
      * then load image files using json data
