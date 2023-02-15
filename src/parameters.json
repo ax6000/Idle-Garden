@@ -1,9 +1,9 @@
 {
   "plants": [
     {
-      "name": "1",
+      "name": "0",
       "node": {
-        "name": "1_node",
+        "name": "0_node",
         "offset": {
           "x": 0,
           "y": 0,
@@ -14,11 +14,37 @@
           "height": 2,
           "width": 2
         },
-        "isleft": true
+        "isLeft": true,
+        "socketOffsets" :[{
+          "x" : -1,
+          "y" : 0
+        },
+        {
+          "x" : -1,
+          "y" : -1
+        },
+        {
+          "x" : 0,
+          "y" : 1
+        },
+        {
+          "x" : 1,
+          "y" : 1
+        },
+        {
+          "x" : 2,
+          "y" : 0
+        },
+        {
+          "x" : 2,
+          "y" : -1
+        }
+        
+      ]
       },
       "leaves": [
         {
-          "name": "1_le_l_1",
+          "name": "0_le_l_1",
           "offset": {
             "x": 0,
             "y": 0,
@@ -29,10 +55,10 @@
             "height": 10,
             "width": 4
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_le_l_3",
+          "name": "0_le_l_3",
           "offset": {
             "x": 0,
             "y": 0,
@@ -43,10 +69,10 @@
             "height": 12,
             "width": 4
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_le_l_4",
+          "name": "0_le_l_4",
           "offset": {
             "x": 0,
             "y": 0,
@@ -57,10 +83,10 @@
             "height": 12,
             "width": 5
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_le_l_5",
+          "name": "0_le_l_5",
           "offset": {
             "x": -2,
             "y": 0,
@@ -71,10 +97,10 @@
             "height": 12,
             "width": 4
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_le_r_1",
+          "name": "0_le_r_1",
           "offset": {
             "x": 2,
             "y": -2,
@@ -85,10 +111,10 @@
             "height": 13,
             "width": 3
           },
-          "isleft": false
+          "isLeft": false
         },
         {
-          "name": "1_le_r_2",
+          "name": "0_le_r_2",
           "offset": {
             "y": 0,
             "x": 0,
@@ -99,10 +125,10 @@
             "height": 14,
             "width": 4
           },
-          "isleft": false
+          "isLeft": false
         },
         {
-          "name": "1_le_r_3",
+          "name": "0_le_r_3",
           "offset": {
             "y": 0,
             "x": 0,
@@ -113,10 +139,10 @@
             "height": 11,
             "width": 3
           },
-          "isleft": false
+          "isLeft": false
         },
         {
-          "name": "1_le_r_4",
+          "name": "0_le_r_4",
           "offset": {
             "y": 0,
             "x": 1,
@@ -127,12 +153,12 @@
             "height": 10,
             "width": 4
           },
-          "isleft": false
+          "isLeft": false
         }
       ],
       "stems": [
         {
-          "name": "1_l_1",
+          "name": "0_l_1",
           "offset": {
             "x": 0,
             "y": 0,
@@ -143,10 +169,10 @@
             "height": 5,
             "width": 9
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_l_2",
+          "name": "0_l_2",
           "offset": {
             "x": 0,
             "y": 0,
@@ -157,10 +183,10 @@
             "height": 5,
             "width": 3
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_l_3",
+          "name": "0_l_3",
           "offset": {
             "x": 0,
             "y": 0,
@@ -171,10 +197,10 @@
             "height": 13,
             "width": 3
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_l_4",
+          "name": "0_l_4",
           "offset": {
             "x": 0,
             "y": 0,
@@ -185,10 +211,10 @@
             "height": 7,
             "width": 2
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_l_5",
+          "name": "0_l_5",
           "offset": {
             "x": 0,
             "y": 0,
@@ -199,10 +225,10 @@
             "height": 7,
             "width": 1
           },
-          "isleft": true
+          "isLeft": true
         },
         {
-          "name": "1_r_1",
+          "name": "0_r_1",
           "offset": {
             "x": 0,
             "y": 0,
@@ -213,10 +239,10 @@
             "height": 7,
             "width": 3
           },
-          "isleft": false
+          "isLeft": false
         },
         {
-          "name": "1_r_2",
+          "name": "0_r_2",
           "offset": {
             "x": 0,
             "y": -4,
@@ -227,10 +253,10 @@
             "height": 25,
             "width": 8
           },
-          "isleft": false
+          "isLeft": false
         },
         {
-          "name": "1_r_3",
+          "name": "0_r_3",
           "offset": {
             "x": 0,
             "y": 0,
@@ -241,10 +267,10 @@
             "height": 11,
             "width": 4
           },
-          "isleft": false
+          "isLeft": false
         },
         {
-          "name": "1_le_l_2",
+          "name": "0_le_l_2",
           "offset": {
             "x": -3,
             "y": 0,
@@ -255,7 +281,7 @@
             "height": 13,
             "width": 5
           },
-          "isleft": true
+          "isLeft": true
         }
       ]
     }
