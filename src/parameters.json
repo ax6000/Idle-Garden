@@ -2,6 +2,12 @@
   "plants": [
     {
       "name": "0",
+      "value":{
+        "mult":0.03,
+        "Node":1,
+        "Leaf":1,
+        "Stem":1
+      },
       "node": {
         "name": "0_node",
         "offset": {
@@ -12,6 +18,7 @@
           "height": 2,
           "width": 2
         },
+
         "socketOffsets": [
           {
             "sockets": [
@@ -158,20 +165,6 @@
           },
           "alignedLeft": false,
           "socketOffsets": []
-        },
-        {
-          "name": "0_le_l_2",
-          "offset": {
-            "x": -3,
-            "y": 0
-          },
-          "size": {
-            "height": 13,
-            "width": 5
-          },
-          "alignedLeft": true,
-          "socketOffsets": [
-          ]
         }
       ],
       "leafIndices": {
@@ -180,8 +173,7 @@
           1,
           2,
           3,
-          4,
-          8
+          4
         ],
         "left": [
           5,
@@ -200,7 +192,8 @@
         "left": [
           5,
           6,
-          7
+          7,
+          8
         ]
       },
       "stems": [
@@ -208,7 +201,7 @@
           "name": "0_l_1",
           "offset": {
             "x": 0,
-            "y": 0
+            "y": 1
           },
           "size": {
             "height": 5,
@@ -387,8 +380,699 @@
               "directon": "mid"
             }
           ]
+        },{
+          "name": "0_le_l_2",
+          "offset": {
+            "x": -3,
+            "y": 0
+          },
+          "size": {
+            "height": 13,
+            "width": 5
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
         }
-        
+
+      ]
+    },
+    {
+      "name": "1",
+      "value":{
+        "mult":0.05,
+        "Node":2,
+        "Leaf":4,
+        "Stem":2
+      },
+      "node": {
+        "name": "1_node",
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "size": {
+          "height": 2,
+          "width": 2
+        },
+
+        "socketOffsets": [
+          {
+            "sockets": [
+              {
+                "x": -1,
+                "y": 0
+              },
+              {
+                "x": -1,
+                "y": -1
+              }
+            ],
+            "direction": "left"
+          },
+          {
+            "sockets": [
+              {
+                "x": 0,
+                "y": 1
+              },
+              {
+                "x": 1,
+                "y": 1
+              }
+            ],
+            "direction": "mid"
+          },
+          {
+            "sockets": [
+              {
+                "x": 2,
+                "y": 0
+              },
+              {
+                "x": 2,
+                "y": -1
+              }
+            ],
+            "direction": "right"
+          }
+        ]
+      },
+      "leaves": [
+        {
+          "name": "1_le_l_1",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 9,
+            "width": 4
+          },
+          "alignedLeft": true,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_l_2",
+          "offset": {
+            "x": -5,
+            "y": 0
+          },
+          "size": {
+            "height": 10,
+            "width": 8
+          },
+          "alignedLeft": true,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_l_3",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 5,
+            "width": 3
+          },
+          "alignedLeft": true,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_1",
+          "offset": {
+            "x": -1,
+            "y": 2
+          },
+          "size": {
+            "height": 8,
+            "width": 4
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_2",
+          "offset": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "height": 7,
+            "width": 3
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_3",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 8,
+            "width": 6
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_4",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 10,
+            "width": 3
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_5",
+          "offset": {
+            "y": 0,
+            "x": 0
+          },
+          "size": {
+            "height": 4,
+            "width": 7
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_6",
+          "offset": {
+            "y": 0,
+            "x": 0
+          },
+          "size": {
+            "height": 6,
+            "width": 6
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_7",
+          "offset": {
+            "y": 0,
+            "x": 1
+          },
+          "size": {
+            "height": 4,
+            "width": 4
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_8",
+          "offset": {
+            "y": 0,
+            "x": 0
+          },
+          "size": {
+            "height": 5,
+            "width": 2
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_le_r_9",
+          "offset": {
+            "y": 0,
+            "x": 0
+          },
+          "size": {
+            "height": 10,
+            "width": 5
+          },
+          "alignedLeft": false,
+          "socketOffsets": []
+        },
+        {
+          "name": "1_flower",
+          "offset": {
+            "y": 0,
+            "x": 0
+          },
+          "size": {
+            "height": 2,
+            "width": 2
+          },
+          "alignedLeft": true,
+          "socketOffsets": []
+        }
+      ],
+      "leafIndices": {
+        "left": [
+          0,
+          1,
+          2,
+          12
+        ],
+        "right": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "stemIndices": {
+        "left": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "right": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "stems": [
+        {
+          "name": "1_l_1",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 3,
+            "width": 3
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 3,
+                  "y": 3
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_2",
+          "offset": {
+            "x": -2,
+            "y": 0
+          },
+          "size": {
+            "height": 12,
+            "width": 10
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 10,
+                  "y": 5
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_3",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 4,
+            "width": 5
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 5,
+                  "y": 4
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_4",
+          "offset": {
+            "x": -1,
+            "y": 0
+          },
+          "size": {
+            "height": 11,
+            "width": 5
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 3,
+                  "y": 11
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_5",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 3,
+            "width": 3
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 3,
+                  "y": 3
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_6",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 9,
+            "width": 5
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 5,
+                  "y": 9
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_7",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 4,
+            "width": 4
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 1,
+                  "y": 4
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_l_8",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 8,
+            "width": 9
+          },
+          "alignedLeft": true,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 9,
+                  "y": 8
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_1",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 3,
+            "width": 4
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 4,
+                  "y": 3
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_2",
+          "offset": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "height": 5,
+            "width": 8
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 8,
+                  "y": 5
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_3",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 3,
+            "width": 4
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 4,
+                  "y": 3
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_4",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 9,
+            "width": 10
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 10,
+                  "y": 9
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_5",
+          "offset": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "height": 4,
+            "width": 2
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 1,
+                  "y": 4
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_6",
+          "offset": {
+            "x": 1,
+            "y": 1
+          },
+          "size": {
+            "height": 3,
+            "width": 4
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 4,
+                  "y": 2
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_7",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 3,
+            "width": 3
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 3,
+                  "y": 3
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_8",
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "height": 9,
+            "width": 9
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 7,
+                  "y": 9
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        },
+        {
+          "name": "1_r_9",
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "height": 3,
+            "width": 6
+          },
+          "alignedLeft": false,
+          "socketOffsets": [
+            {
+              "sockets": [
+                {
+                  "x": 6,
+                  "y": 1
+                }
+              ],
+              "directon": "mid"
+            }
+          ]
+        }
       ]
     }
   ]

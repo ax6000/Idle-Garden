@@ -1,0 +1,26 @@
+{
+    "items":[
+        {
+            "name":"Cursor",
+            "price":10,
+            "production":1,
+            "scaleX":1,
+            "scaleY":1
+        },
+        {
+            "name":"Golden",
+            "price":400,
+            "production":10,
+            "scaleX":1.8,
+            "scaleY":2
+        },
+        {
+            "name":"Rainbow",
+            "price":7777,
+            "production":100,
+            "scaleX":1.8,
+            "scaleY":2
+        }
+    ],
+ "upgrades":{}
+}
