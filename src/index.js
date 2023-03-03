@@ -45,6 +45,8 @@ class Controller extends Phaser.Scene{
         this.load.script('farm', 'src/Farm.js'); 
         this.load.script('scene_ui', 'src/UIScene.js'); 
         this.load.script('scene_farm', 'src/FarmScene.js'); 
+        this.load.script('plantElement', 'src/PlantElement.js'); 
+        this.load.script('itemButton', 'src/ItemButton.js'); 
         // other images   
         this.load.image("soil","assets/soil.png");
         this.load.image("soil_2","assets/soil_2.png");

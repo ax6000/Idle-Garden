@@ -29,8 +29,8 @@ class Farm{
         // console.log("addPlant",this.#plants,pos);
         this.#plants.push(new Plant(pos,this.#scene,species,this,this.plants.length))
     }
-    removePlant(idx){
-        this.#plants.splice(idx,1)
+    removePlant(index){
+        this.#plants.splice(index,1)
     }
     grow(){
         var random = Phaser.Math.Between(0,this.plants.length-1)
