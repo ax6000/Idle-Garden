@@ -59,13 +59,21 @@ class Controller extends Phaser.Scene{
         //item
         this.load.image("Cursor","assets/cursor.png")
         this.load.image("coin","assets/coin.png")
-        this.load.image("can","assets/can/can.png")
-        this.load.image("can_down","assets/can/can_down.png")
-        this.load.image("Golden","assets/can/golden_can.png")
-        this.load.image("Rainbow","assets/can/rainbow_can.png")
+        this.load.image("can","assets/cans/can/can.png")
+        this.load.image("can_down","assets/cans/can/can_down.png")
+        this.load.image("Golden","assets/cans/can/golden_can.png")
+        this.load.image("Rainbow","assets/cans/can/rainbow_can.png")
         
         this.load.image("board","assets/board2x.png")
         this.load.image("upgrade","assets/upgrade.png")
+        this.load.image("seedbag","assets/seedbags/seedbag/seedbag.png")
+        for(var i=0; i< 2;i++){
+            this.load.image("seedbag_"+i,"assets/seedbags/seedbag/seedbag_"+i+".png")
+        }
+        for(var i=0; i< 5;i++){
+            this.load.image("can_"+i,"assets/cans/can_"+i+".png")
+            this.load.image("hoe_"+i,"assets/hoes/hoe_"+i+".png")
+        }
         //audio
         this.load.audio("score","assets/audio/score.mp3")
         this.load.audio("kusa","assets/audio/kusa.mp3")
@@ -73,7 +81,8 @@ class Controller extends Phaser.Scene{
 
         //other json
         this.load.json("item","./src/items.json")
-        //font
+        //plugin
+        this.load.plugin('rexgrayscalepipelineplugin','assets/rexgrayscalepipelineplugin.js')
     
     }
     create ()
