@@ -1,6 +1,14 @@
 # Idle Garden
-## Game Page
+## Game page
 https://ax6000.itch.io/idle-garden
+## About the game
+Clicker like idle game. 
+
+You can click the button on the left to grow the plant in the screen.
+
+If the plant is fully grown, it's automatically harvested and you obtain the money depend on the size of the plant.
+
+You can purchase Items by clicking the buttons on the left to accelerate plant growth.     
 ## Credit
 
 [Farm tool Icon 24x24](https://vayasandesu.itch.io/farm-tool-icon-24x24) by Sandesu (licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/https://creativecommons.org/licenses/by-sa/4.0/)).  
