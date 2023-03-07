@@ -1,9 +1,4 @@
 
-// 分割した画像ファイルの大きさ
-// const this.scene.IMAGE_SIZE = new Phaser.Math.Vector2(32,64);
-// 画像ファイルから画面に表示するために拡大する倍率
-// const this.scene.IMAGE_SCALEIMAGE_SCALE = 3
-// const CHILD_SCALE = 50
 /**
  * index.jsで生成される  
  * #rootから木構造で葉や茎のオブジェクトに分割された植物を管理
@@ -276,7 +271,7 @@ class Plant{
             element =  new Leaf(position,this,elementJsonData,parentElement)
             // console.log("created Leaf",element);
         }
-        console.log(type,element.type,element,parentElement)
+        // console.log(type,element.type,element,parentElement)
         this.updateParentElement(type,element,parentElement)
     }
     updateParentElement(type,element,parentElement){

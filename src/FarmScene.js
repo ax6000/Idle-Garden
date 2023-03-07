@@ -25,4 +25,6 @@ class FarmScene extends Phaser.Scene{
         this.#farm.addPlant(new Phaser.Math.Vector2(300,-200),0)
     }
     getUIScene(){return this.parentScene.uiScene}
+    unlockSpecies(species){this.#farm.unlockNewSpecies(species)}
+    unlockNewPlantArea(){this.#farm.unlockNewPlantArea}
 }

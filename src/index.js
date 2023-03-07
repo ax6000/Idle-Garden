@@ -23,7 +23,7 @@ class Controller extends Phaser.Scene{
 
         const doStuff = async () => {
             var loadImage = (game,n,name) => game.load.image(name,"assets/"+n+"/"+name+".png");
-            asyncLoader(this.load.json("param","./src/parameters.json")).then(()=>{
+            asyncLoader(this.load.json("param","./src/json/parameters.json")).then(()=>{
                 let data = this.cache.json.get("param")
                 for(let plant in data.plants){
                     
@@ -47,9 +47,9 @@ class Controller extends Phaser.Scene{
         this.load.script('scene_farm', 'src/FarmScene.js'); 
         this.load.script('plantElement', 'src/PlantElement.js'); 
         this.load.script('itemButton', 'src/ItemButton.js'); 
-        // other images   
-        this.load.image("soil","assets/soil.png");
-        this.load.image("soil_2","assets/soil_2.png");
+        this.load.script('upgradeBoard', 'src/UpgradeBoard.js'); 
+        //other json
+        this.load.json("item","./src/json/items.json")
         //button
         this.load.image("seedButton_1","assets/button/buttonmedium1.png")
         this.load.image("seedButton_2","assets/button/buttonmedium2.png")
@@ -72,17 +72,20 @@ class Controller extends Phaser.Scene{
         }
         for(var i=0; i< 5;i++){
             this.load.image("can_"+i,"assets/cans/can_"+i+".png")
+            this.load.image("upgrade_can_"+i,"assets/cans/upgrade_can_"+i+".png")
             this.load.image("hoe_"+i,"assets/hoes/hoe_"+i+".png")
+            this.load.image("upgrade_hoe_"+i,"assets/hoes/upgrade_hoe_"+i+".png")
         }
+        // other images   
+        this.load.image("soil","assets/soil.png");
+        this.load.image("soil_2","assets/soil_2.png");
         //audio
         this.load.audio("score","assets/audio/score.mp3")
         this.load.audio("kusa","assets/audio/kusa.mp3")
         this.load.audio("buy","assets/audio/buy.mp3")
-
-        //other json
-        this.load.json("item","./src/items.json")
+        
         //plugin
-        this.load.plugin('rexgrayscalepipelineplugin','assets/rexgrayscalepipelineplugin.js')
+        // this.load.plugin('rexgrayscalepipelineplugin','assets/rexgrayscalepipelineplugin.js')
     
     }
     create ()
