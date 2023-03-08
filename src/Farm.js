@@ -19,7 +19,7 @@ class Farm{
         this.#borderX[1] -= FARM_PADDING_X[1]+this.#scene.IMAGE_SIZE.x*this.scene.IMAGE_SCALE
         
         this.#borderY[0] +=FARM_PADDING_Y[0]
-        this.#borderY[1] -= FARM_PADDING_Y[1]+this.#scene.IMAGE_SIZE.x*this.scene.IMAGE_SCALE
+        this.#borderY[1] -= FARM_PADDING_Y[1]+this.#scene.IMAGE_SIZE.y*this.scene.IMAGE_SCALE
         console.log("farm border initialized",this.#borderX,this.#borderY);
         this.#bestUnlockedSpecies = 0
         this.#plantSlotContainer = new PlantSlotContainer(this.#scene,this)

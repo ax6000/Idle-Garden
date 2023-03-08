@@ -33,6 +33,7 @@ class UpgradeBoard{
         newUpgrade.setData("jsonData",this.jsonData[index])
         newUpgrade.setData("price",newUpgrade.getData("jsonData").price)
         newUpgrade.on("pointerdown",function(pointer){
+            this.scene.sound.play("buy")
             console.log("pointerdown called",this);
             var board = this.getData("board")
             var jsonData = this.getData("jsonData")

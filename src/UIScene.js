@@ -105,7 +105,7 @@ class UIScene extends Phaser.Scene{
         for(var i in this.#itemJsonData.items){
             this.#itemButtons.push(new ItemButton(this,i,this.#itemJsonData.items[i]))
         }
-        this.purchaseItem(ItemType.Cursor,0)
+        // this.purchaseItem(ItemType.Cursor,0)
     }
     
     update(time,delta){

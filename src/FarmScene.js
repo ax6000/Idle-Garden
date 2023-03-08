@@ -7,8 +7,8 @@ class FarmScene extends Phaser.Scene{
     {   
         super(config);
         this.parentScene = scene
-        this.IMAGE_SCALE = 2
-        this.IMAGE_SIZE = new Phaser.Math.Vector2(16*this.IMAGE_SCALE,32*this.IMAGE_SCALE); 
+        this.IMAGE_SCALE = 6
+        this.IMAGE_SIZE = new Phaser.Math.Vector2(16,32); 
         this.CHILD_SCALE = 50
         // Node-Stem-Nodeとなる確率 -> (1-P)^2
         // Nodeが一つも出ない確率 -> (1-(1-P)^6) 

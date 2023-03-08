@@ -24,27 +24,32 @@ class PlantSlot{
         this.#index = index
         this.#selectedSpecies = species
         this.#bestUnlockedSpecies = species
-        this.#slotImg = scene.add.image(SLOTS_POS_X+SLOT_IMG_XY*index,SLOTS_POS_Y,"plantSlot").setOrigin(0,0)
+        this.#slotImg = scene.add.image(SLOTS_POS_X+SLOT_IMG_XY*index,SLOTS_POS_Y,"plantSlot")
+                                 .setOrigin(0,0)
+                                 .setInteractive()
+                                 .on("pointerdown",function(pointer){
+                                    this.scrollSelectedSpecies()
+                                 },this)
         for(var i = 0; i < CURRENT_PLANT_SPECIES;i++){
             this.#iconImgs.push(scene.add.image(SLOTS_POS_X+SLOT_IMG_XY*index+SLOT_ICON_OFFSET_XY,SLOTS_POS_Y+SLOT_ICON_OFFSET_XY,"plantIcon_"+i)
                                          .setOrigin(0,0)
                                          .setVisible(false))
-        }
+        }   
         this.#iconImgs[this.#selectedSpecies].setVisible(true)
         this.#isGrowable = true
         this.#autoHarvest = true
         this.#buttonDown = scene.add.sprite(SLOTS_POS_X+SLOT_IMG_XY*index,SLOTS_POS_Y+SLOT_IMG_XY,"slotButtonDown_1")
                                     .setOrigin(0,0)
                                     .setInteractive()
-        this.#buttonDown.on("pointerdown",function(pointer){
-            this.#buttonDown.play("slotPressDown");
-            this.scrollSelectedSpecies()
-        },this)
-        this.#buttonDown.on("pointerup",function(pointer){
-            this.#buttonDown.play("slotNotPressDown")
-        },this)
-
+                                    .on("pointerdown",function(pointer){
+                                        this.#buttonDown.play("slotPressDown");
+                                        this.scrollSelectedSpecies()
+                                    },this)
+                                    .on("pointerup",function(pointer){
+                                        this.#buttonDown.play("slotNotPressDown")
+                                    },this)
     }
+    
     addPlant(pos){
         pos = this.#parentSlotContainer.getPosInBorder(pos)
         this.#plant = new Plant(pos,this.#scene,this.#selectedSpecies,this)
@@ -71,7 +76,6 @@ class PlantSlot{
     scrollSelectedSpecies(){
         var currentSpecies = this.#selectedSpecies
         var nextSpecies = (this.#selectedSpecies + 1) % (this.#bestUnlockedSpecies+1)
-        console.log(currentSpecies,nextSpecies,this.#bestUnlockedSpecies);
         this.#iconImgs[currentSpecies].setVisible(false)
         this.#iconImgs[nextSpecies].setVisible(true)
         this.#selectedSpecies = nextSpecies

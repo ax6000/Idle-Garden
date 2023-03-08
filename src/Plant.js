@@ -90,7 +90,7 @@ class Plant{
         this.#pruneMultiplier = Math.pow(Math.E,0.1)
         this.#valueRaw = 0
         this.#value = 0
-        this.#valueTxt = this.scene.add.text(this.#position.x+3, this.#position.y+60*this.#scene.IMAGE_SCALE+30, 0, { fontFamily:"font1",fontSize: '24px', fill: '#000'}).setOrigin(0.5);
+        this.#valueTxt = this.scene.add.text(this.#position.x+3, this.#position.y+65*this.#scene.IMAGE_SCALE+20, 0, { fontFamily:"font1",fontSize: '24px', fill: '#000'}).setOrigin(0.5);
         this.#numChild = 1
         // this.#farmindex = farmindex
         this.createRoot()
@@ -144,7 +144,7 @@ class Plant{
                 // console.log("can't grow anymore",this.#root)
                 this.#fullyGrown = !this.#growFlg
                 if(this.#fullyGrown)this.#parentSlot.onFullyGrown()
-
+                
             }
         } 
         this.growFlg = false
@@ -202,9 +202,10 @@ class Plant{
         } 
         
         // decide socket to use
-        var socketOffsetsindex = Phaser.Math.Between(0,parent.growableSides.length-1)
-        var socketindex = Phaser.Math.Between(0,parent.socketOffsets[socketOffsetsindex].sockets.length-1)
-        var tmpOffsetData = parent.socketOffsets[socketOffsetsindex].sockets[socketindex]
+        var randomSide = Phaser.Math.Between(0,parent.growableSides.length-1)
+        var socketOffsetsindex = parent.growableSides[randomSide]
+        var socketIndex = Phaser.Math.Between(0,parent.socketOffsets[socketOffsetsindex].sockets.length-1)
+        var tmpOffsetData = parent.socketOffsets[socketOffsetsindex].sockets[socketIndex]
         var socketOffset = new Phaser.Math.Vector2(tmpOffsetData.x,tmpOffsetData.y).scale(this.scene.IMAGE_SCALE)
         // decide spawn Leaf or not
         var random = Phaser.Math.Between(0,99)
@@ -230,7 +231,8 @@ class Plant{
             if (Phaser.Math.FloatBetween(0,1) > this.pruneProba) parent.growableSides.pop()
         }
 
-        // if (parent.growableSides.length == 1) parent.growableSides.pop()  
+        // if (parent.growableSides.length == 1) parent.growableSides.pop()
+        console.log("using offset "+socketOffsetsindex+"["+socketIndex+"]",tmpOffsetData,"\nspawning "+elementJsonDataToSpawn.name);  
         this.createPlantElement(elementType,socketOffset.add(parent.position),elementJsonDataToSpawn,parent)
     }
 

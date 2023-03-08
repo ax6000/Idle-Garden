@@ -52,12 +52,12 @@ class PlantElement{
         this.#elementInfo = elementJsonData
         var tmpPos = this.fixPrintPos(this.#position)
         this.#name = this.elementInfo.name
-        this.#img = this.#parent.scene.add.image(tmpPos.x,tmpPos.y,this.name).setOrigin(0, 0).setScale(this.parent.scene.IMAGE_SCALE,this.parent.scene.IMAGE_SCALE);
+        var originX = this.elementInfo.alignedLeft ? 0:1
+        this.#img = this.#parent.scene.add.image(tmpPos.x,tmpPos.y,this.name).setOrigin(originX, 0).setScale(this.parent.scene.IMAGE_SCALE,this.parent.scene.IMAGE_SCALE);
         this.#from = from
         this.#socketOffsets = this.elementInfo.socketOffsets;
         for (var i = 0; i< this.#socketOffsets.length;i++) this.#growableSides.push(i) 
-        // console.log(position,parent,elementJsonData,from,this,tmpPos,this.elementInfo,this.elementInfo.alignedLeft,this.elementInfo["alignedLeft"]);
-    }
+        }
 
     /**
      * 左下or右下に詰められている画像の座標を調整して親のオブジェクトと見た目が接続するように  
@@ -68,10 +68,11 @@ class PlantElement{
     fixPrintPos(origin){
         var pos = new Phaser.Math.Vector2(0,0)
         //画像左上の座標->左下の座標をとる
-        // pos.y -= this.scene.IMAGE_SIZE.y;
+        // pos.y -= this.scene..y;
         // 右下詰めなので、 左下->右下の座標をとる   
         // 左下詰めの画像はそのまま
-        if (!this.#elementInfo.alignedLeft) pos.x -= (this.parent.scene.IMAGE_SIZE.x-1)*this.parent.scene.IMAGE_SCALE;
+        // if (!this.#elementInfo.alignedLeft) pos.x -= (this.parent.scene.IMAGE_SIZE.x-1)*this.parent.scene.IMAGE_SCALE;
+        if (!this.#elementInfo.alignedLeft) pos.x += this.parent.scene.IMAGE_SCALE;
         // 画像内で先端が角以外にある場合は調整
         pos.x += this.#elementInfo.offset.x*this.parent.scene.IMAGE_SCALE
         pos.y += this.#elementInfo.offset.y*this.parent.scene.IMAGE_SCALE
