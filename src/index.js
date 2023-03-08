@@ -1,4 +1,4 @@
-
+const CURRENT_PLANT_SPECIES =2
 class Controller extends Phaser.Scene{
     farmScene;
     uiScene;
@@ -43,11 +43,13 @@ class Controller extends Phaser.Scene{
         // script
         this.load.script('plant', 'src/Plant.js'); 
         this.load.script('farm', 'src/Farm.js'); 
-        this.load.script('scene_ui', 'src/UIScene.js'); 
-        this.load.script('scene_farm', 'src/FarmScene.js'); 
+        this.load.script('UIScene', 'src/UIScene.js'); 
+        this.load.script('farmScene', 'src/FarmScene.js'); 
         this.load.script('plantElement', 'src/PlantElement.js'); 
         this.load.script('itemButton', 'src/ItemButton.js'); 
         this.load.script('upgradeBoard', 'src/UpgradeBoard.js'); 
+        this.load.script('plantSlotContainer', 'src/PlantSlotContainer.js'); 
+        this.load.script('plantSlot', 'src/PlantSlot.js'); 
         //other json
         this.load.json("item","./src/json/items.json")
         //button
@@ -56,6 +58,10 @@ class Controller extends Phaser.Scene{
         this.load.image("seedButton_3","assets/button/buttonmedium3.png")
         this.load.image("seedButtonSq_1","assets/button/buttonsq1.png")
         this.load.image("seedButtonSq_2","assets/button/buttonsq2.png")
+        //slot
+        this.load.image("plantSlot","assets/slots/plant_slot.png")
+        this.load.image("slotButtonDown_1","assets/slots/button_down4.png")
+        this.load.image("slotButtonDown_2","assets/slots/button_down5.png")
         //item
         this.load.image("Cursor","assets/cursor.png")
         this.load.image("coin","assets/coin.png")
@@ -67,8 +73,9 @@ class Controller extends Phaser.Scene{
         this.load.image("board","assets/board2x.png")
         this.load.image("upgrade","assets/upgrade.png")
         this.load.image("seedbag","assets/seedbags/seedbag/seedbag.png")
-        for(var i=0; i< 2;i++){
-            this.load.image("seedbag_"+i,"assets/seedbags/seedbag/seedbag_"+i+".png")
+        for(var i=0; i< CURRENT_PLANT_SPECIES;i++){
+            this.load.image("seedbag_"+i,"assets/seedbags/seedbag_new/seedbag_"+i+".png")
+            this.load.image("plantIcon_"+i,"assets/icons/icon_plant_"+i+".png")
         }
         for(var i=0; i< 5;i++){
             this.load.image("can_"+i,"assets/cans/can_"+i+".png")

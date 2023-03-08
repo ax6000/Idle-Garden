@@ -41,7 +41,7 @@ class ItemButton{
         this.texts["price"] = this.scene.add.text(ITEMBUTTON_X+56,37+ITEMBUTTON_Y+ITEMBUTTONHEIGHT*i, 0, { fontFamily:"font1",fontSize: '18px', fill: COLORCODE["red"] })
                                       .setOrigin(0,0)
                                       .setInteractive()
-                                      .setShadow(2, 2, 'rgba(0, 0, 0, 0.5)', 0)
+                                      .setShadow(1, 1, 'rgba(0, 0, 0, 0.5)', 0)
         this.basePrice = data.price
         this.price = this.basePrice
         this.sprites["itemIcon"] = this.scene.add.sprite(ITEMBUTTON_X+10,20+ITEMBUTTON_Y+ITEMBUTTONHEIGHT*i,data.name)
@@ -56,7 +56,7 @@ class ItemButton{
                                   .setInteractive()
         this.texts["amount"] = this.scene.add.text(ITEMBUTTON_X+186,37+ITEMBUTTON_Y+ITEMBUTTONHEIGHT*i, '0', { fontFamily:"font1",fontSize: '18px', fill: COLORCODE["gray"] })
                                        .setOrigin(1,0)
-                                       .setShadow(2, 2, 'rgba(0, 0, 0, 0.5)', 0)
+                                       .setShadow(1, 1, 'rgba(0, 0, 0, 0.5)', 0)
                                        .setInteractive()
         this.buttonItems = this.scene.add.group()
         this.buttonItems.addMultiple([

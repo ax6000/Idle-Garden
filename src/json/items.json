@@ -42,7 +42,7 @@
         {
             "index":2,
             "name":"upgrade_hoe_1",
-            "price":10000,
+            "price":100,
             "funcName":"unlockNewPlantArea",
             "args":{},
             "unlockUpgradeIndices":[3]
@@ -50,7 +50,7 @@
         {
             "index":3,
             "name":"upgrade_hoe_2",
-            "price":100000,
+            "price":101,
             "funcName":"unlockNewPlantArea",
             "args":{},
             "unlockUpgradeIndices":[4]
@@ -58,7 +58,7 @@
         {
             "index":4,
             "name":"upgrade_hoe_3",
-            "price":1000000,
+            "price":102,
             "funcName":"unlockNewPlantArea",
             "args":{},
             "unlockUpgradeIndices":[5]
@@ -66,7 +66,7 @@
         {
             "index":5,
             "name":"upgrade_hoe_4",
-            "price":10000000,
+            "price":103,
             "funcName":"unlockNewPlantArea",
             "args":{},
             "unlockUpgradeIndices":[]

@@ -13,7 +13,6 @@ class Plant{
     #species;
     /** */
     #jsonData;
-    /** number of elements(node,stem) which can connect more elements*/
     #growFlg;
     /** raw value of this plant before applying multiplier*/
     #valueRaw;
@@ -28,8 +27,10 @@ class Plant{
     */
    #num;
    #numChild;
-   #farm
-   #farmindex
+   #parentSlot
+//    #farm
+//    #farmindex
+   #fullyGrown
     set root(node){this.#root = node;}
     get scene(){ return this.#scene;}
     get species(){return this.#species}
@@ -43,6 +44,7 @@ class Plant{
     get num(){return this.#num}
     get pruneMultiplier(){return this.#pruneMultiplier}
 
+    get fullyGrown(){return this.#fullyGrown}
     set num(n){
         this.num[0]++;
         this.num[n]++;
@@ -51,7 +53,7 @@ class Plant{
     }
     get numChild(){return this.#numChild}
     // farm class
-    get farm (){return this.#farm}
+    // get farm (){return this.#farm}
     // gold
     get valueTxt(){return this.#valueTxt}
     set valueTxt(n){
@@ -66,13 +68,13 @@ class Plant{
      * @param {Phaser.Scene} scene 
      * @param {String} species 
      */
-    constructor(position,scene,species,farm,farmindex){
+    constructor(position,scene,species,parentSlot){
         // this.x = x;
         // this.y = y;
         this.#position = position;
         this.#scene = scene;
         this.#species = species
-        this.#farm = farm
+        this.#parentSlot = parentSlot
         // parameter -> index.js:45
         this.#jsonData = this.#scene.cache.json.get("param").plants[this.#species]
         this.#growFlg = false
@@ -90,7 +92,7 @@ class Plant{
         this.#value = 0
         this.#valueTxt = this.scene.add.text(this.#position.x+3, this.#position.y+60*this.#scene.IMAGE_SCALE+30, 0, { fontFamily:"font1",fontSize: '24px', fill: '#000'}).setOrigin(0.5);
         this.#numChild = 1
-        this.#farmindex = farmindex
+        // this.#farmindex = farmindex
         this.createRoot()
     }
     /**
@@ -140,12 +142,14 @@ class Plant{
             this.dfs_grow(this.#root)
             if(i == 9 && !this.#growFlg){
                 // console.log("can't grow anymore",this.#root)
-                this.harvest()
+                this.#fullyGrown = !this.#growFlg
+                if(this.#fullyGrown)this.#parentSlot.onFullyGrown()
+
             }
         } 
         this.growFlg = false
     }
-    harvest(dropSeeds=true){
+    harvest(){
         this.scene.sound.play("kusa");
         this.#valueTxt.setText("+"+this.#valueTxt.text)
         this.scene.tweens.add({
@@ -164,14 +168,8 @@ class Plant{
         this.scene.getUIScene().addGold(parseInt(this.value))
         this.value = 0
         this.harvestNode(this.#root)
-        var norm = (() => Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()))
-        for(var i = 0; i < this.#numChild;i++){
-            this.#farm.removePlant(this.#farmindex)
-            if (dropSeeds){
-                var childPos = new Phaser.Math.Vector2(this.#position.x+norm()*this.scene.CHILD_SCALE,this.#position.y+norm()*this.scene.CHILD_SCALE)
-                this.#farm.addPlant(childPos,this.species)
-            }
-        }
+        this.#parentSlot.removePlant()
+        this.#parentSlot.addPlantChild(this.#position.x,this.#position.y)
     }
 
 
